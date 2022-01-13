@@ -1,0 +1,25 @@
+\begin{circuitikz}\draw
+       
+        (3,0.75) node[or port] (or1) {}
+        (0,1) node[ieeestd not port, scale = 0.5] (not1) {}
+        (0,-2) node[ieeestd not port, scale = 0.5] (not2) {}
+        (3,-1.75) node[and port] (and1) {}
+        (5,-0.75) node[or port] (or2) {}
+        
+        (or1.in 2) -- (and1.in 1)
+        (or1.out) -- (or2.in 1)
+        (and1.out) -- (or2.in 2)
+        (not1.out) -- (or1.in 1)
+        (not2.out) -- (and1.in 2);
+       
+        
+        \node(X) at (-2.5,1) {$X$};
+        \node(Y) at (-2.5,0.5) {$Y$};
+        \node(Z) at (-2.5,-2) {$Z$};
+        \node(F) at (5.5,-0.75){$F$};
+        
+        \draw (-2.2,1) |- (not1.in);
+        \draw (-2.2,0.5) |- (or1.in 2);
+        \draw (-2.2,-2) |- (not2.in);
+        
+\end{circuitikz}
