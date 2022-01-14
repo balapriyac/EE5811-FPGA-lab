@@ -142,4 +142,35 @@ The truth table corresponding to F for various choices of input X, Y, Z is shown
     \label{fig:kmap}
 \end{figure}
 
+\section{Implementation Using NAND Logic}
+\begin{align}
+F = X' + Y \\
+= (X.Y')' \\
+since \; \;  (A.B)' = A' + B')\\
+\implies F = (X.Y')' \;(using \;NAND\; logic)
+\end{align}
+
+\begin{figure}[h!]
+    \centering
+    \begin{circuitikz}\draw
+       
+        (3,0) node[nand port] (nand2) {}
+        (1,-0.3) node[nand port, scale = 0.5] (nand1) {}
+        
+        (nand1.out) -- (nand2.in 2)
+        (nand1.in 1) -- (nand1.in 2);
+        
+        \node(X) at (-1,0.25) {$X$};
+        \node(Y) at (-1,-0.5) {$Y$};
+        \node(F) at (3.5,0){$F$};
+        
+        \draw (-0.8,0.25) |- (nand2.in 1);
+        \draw (-0.8,-0.3) |- (0.3,-0.3);
+        
+    \end{circuitikz}
+   
+    \caption{Logic circuit using NAND logic}
+    \label{fig:NAND logic ckt}
+\end{figure}
+
 \end{document}
