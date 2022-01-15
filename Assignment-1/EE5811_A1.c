@@ -1,18 +1,11 @@
 #include <stdio.h>
 
 int main(){
-    unsigned char  X,Y,Z;
-    printf("X: ");
-    scanf("%x", &X);
-    printf("Y: ");
-    scanf("%x", &Y);
-    printf("Z: ");
-    scanf("%x", &Z);
-    
+    unsigned char  X=0x00,Y=0x00,Z=0x00;
     unsigned char one = 0x01;
     unsigned char F;
-    F = ~(X&(~Y));
-    printf("F = %x\n", one&F);
+    F = ~(X & (~Y));
+    printf("XYZ= %x%x%x : Output F = %x\n", one&X,one&Y,one&Z,one&F);
     return 0;
 }
 
