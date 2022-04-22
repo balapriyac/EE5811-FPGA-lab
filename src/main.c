@@ -93,9 +93,9 @@ int main(void)
         z = PyHal_GPIO_Get(6);
         f = !(x & (!y));
         if (f == 0)
-        PyHal_GPIO_Set(18, 0);
+        PyHal_GPIO_Set(22, 0);
         else
-        PyHal_GPIO_Set(18, 1);
+        PyHal_GPIO_Set(22, 1);
     }
     /* Start the tasks and timer running. */
     vTaskStartScheduler();
